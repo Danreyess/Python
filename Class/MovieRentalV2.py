@@ -19,14 +19,15 @@ class MovieStore:
         movie = Movie(title, genre)
         self.movies.append(movie)
 
+    def add_customer(self, name):
+        customer = Customer(name)
+        self.customers.append(customer)
+
     def show_movies(self):
         for movie in self.movies:
             status = "Available" if movie.available else "Not available"
             print(f"{movie.name} - {movie.genre} - {status}")
 
-    def add_customer(self, name):
-        customer = Customer(name)
-        self.customers.append(customer)
 
     def rent_movie(self,customer_name, title):
         #Search client
